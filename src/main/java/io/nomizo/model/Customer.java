@@ -18,22 +18,13 @@ public class Customer {
     private String lastName;
     private String email;
 
-//    @ManyToMany(fetch = FetchType.LAZY)
-//    @JoinTable(name = "customer_phones")
-//    private Set<PhoneNumber> phoneNumberSet;
-
-
     public Customer() { super(); }
-
-//    Set<PhoneNumber> phoneNumberSet
-
 
     public Customer(long id, String firstName, String lastName, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-//        this.phoneNumberSet = phoneNumberSet;
     }
 
     public long getId() { return id; }
@@ -47,9 +38,6 @@ public class Customer {
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
-
-//    public Set<PhoneNumber> getPhoneNumberSet() { return phoneNumberSet; }
-//    public void setPhoneNumberSet(Set<PhoneNumber> phoneNumberSet) { this.phoneNumberSet = phoneNumberSet; }
 
     @Override
     public String toString() {
