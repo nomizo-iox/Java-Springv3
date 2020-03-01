@@ -22,16 +22,16 @@ public class Order {
     private Customer customer;
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.EAGER, mappedBy = "order")
-    private List<Item> itemList;
+    private List<Item> items;
 
     public Order() { super(); }
 
 
-    public Order(long id, Date createdAt, Customer customer, List<Item> itemList) {
+    public Order(long id, Date createdAt, Customer customer, List<Item> items) {
         this.id = id;
         this.createdAt = createdAt;
         this.customer = customer;
-        this.itemList = itemList;
+        this.items = items;
     }
 
     public long getId() { return id; }
@@ -43,8 +43,8 @@ public class Order {
     public Customer getCustomer() { return customer; }
     public void setCustomer(Customer customer) { this.customer = customer; }
 
-    public List<Item> getItemList() { return itemList; }
-    public void setItemList(List<Item> itemList) { this.itemList = itemList; }
+    public List<Item> getItems() { return items; }
+    public void setItems(List<Item> itemList) { this.items = itemList; }
 
     @Override
     public String toString() { return ToStringBuilder.reflectionToString(this); }
